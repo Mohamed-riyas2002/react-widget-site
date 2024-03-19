@@ -14,7 +14,7 @@
   	var e;i.getElementById(t)?
   initFreshChat():((e=i.createElement("script")).id=t,e.async=!0,
   e.src="https://teal-10apr.freshpori.com/js/widget.js",e.onload=initFreshChat,i.head.appendChild(e))
-  sendDataToParent();
+  sendDataToParent('hello from child');
   }
   
   function initiateCall(){initialize(document,"Freshchat-js-sdk")}
@@ -22,7 +22,7 @@
   window.addEventListener?window.addEventListener("load",initiateCall,!1):
   
   window.attachEvent("load",initiateCall,!1);
-function sendDataToParent() {
+function sendDataToParent(data) {
     var parentWindow = window.parent;
     parentWindow.postMessage(data, 'https://widget-test-site-au.netlify.app');
 }
