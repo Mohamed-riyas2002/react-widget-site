@@ -22,7 +22,7 @@
   window.addEventListener?window.addEventListener("load",initiateCall,!1):
   
   window.attachEvent("load",initiateCall,!1);
-function sendDataToParent("hello from parent") {
+function sendDataToParent() {
     var parentWindow = window.parent;
     parentWindow.postMessage(data, 'https://widget-test-site-au.netlify.app');
 }
