@@ -26,7 +26,18 @@ document.addEventListener("DOMContentLoaded", function() {
 	    var parentWindow = window.parent;
 	    parentWindow.postMessage(data, 'https://widget-test-site-au.netlify.app');
 	}
-	sendDataToParent('hello from child');
+	
+	window.addEventListener('message', function(event) {
+    if (event.origin !== 'https://widget-test-site-au.netlify.app') return;
+
+    // Do something with the received data from the child iframe
+    console.log('Received message from parent', event.data);
+});
+
+});
+window.fcWidget.on("widget:loaded", function(resp) {
+  console.log('Widget Loaded');
+  sendDataToParent('hello from child');
 });
 </script>
 </body>
