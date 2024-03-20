@@ -9,10 +9,10 @@
       	 token: "9eb1469a-1072-4887-bde3-34aaf393792a",
 	 host: "https://teal-10apr.freshpori.com"
     });
-    	window.fcWidget.on("widget:loaded", function(resp) {
-	  console.log('Widget Loaded');
-	  sendDataToParent('hello from child');
-	});
+    if (window.fcWidget.isInitialized() == true) {
+    console.log('Widget already initialised');
+    sendDataToParent("Hello from init");
+}
   }
   function initialize(i,t){
   	var e;i.getElementById(t)?
