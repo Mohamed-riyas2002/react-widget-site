@@ -9,10 +9,10 @@
       	 token: "9eb1469a-1072-4887-bde3-34aaf393792a",
 	 host: "https://teal-10apr.freshpori.com"
     });
-    if (window.fcWidget.isInitialized() == true) {
-    console.log('Widget already initialised');
-    sendDataToParent("Hello from init");
-}
+//     if (window.fcWidget.isInitialized() == true) {
+//     console.log('Widget already initialised');
+//     sendDataToParent("Hello from init");
+// }
   }
   function initialize(i,t){
   	var e;i.getElementById(t)?
@@ -25,20 +25,20 @@
   window.addEventListener?window.addEventListener("load",initiateCall,!1):
   
   window.attachEvent("load",initiateCall,!1);
-document.addEventListener("DOMContentLoaded", function() {
-	function sendDataToParent(data) {
-	    var parentWindow = window.parent;
-	    parentWindow.postMessage(data, 'https://widget-test-site-au.netlify.app');
-	}
+// document.addEventListener("DOMContentLoaded", function() {
+// 	function sendDataToParent(data) {
+// 	    var parentWindow = window.parent;
+// 	    parentWindow.postMessage(data, 'https://widget-test-site-au.netlify.app');
+// 	}
 	
-	window.addEventListener('message', function(event) {
-    if (event.origin !== 'https://widget-test-site-au.netlify.app') return;
+// 	window.addEventListener('message', function(event) {
+//     if (event.origin !== 'https://widget-test-site-au.netlify.app') return;
 
-    // Do something with the received data from the child iframe
-    console.log('Received message from parent', event.data);
-});
+//     // Do something with the received data from the child iframe
+//     console.log('Received message from parent', event.data);
+// });
 
-});
+// });
 </script>
 </body>
 </html>
